@@ -6,16 +6,15 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-    client.user.setActivity("+invite || bc BOT",{type: 'streaming'})
+    client.user.setActivity("+invite || +support",{type: 'streaming'})
 });
-
 
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
     if (message.guild) {
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + '+bc') {
+if(message.content.split(' ')[0] == prefix + 'bc') {
     if (!args[1]) {
 return;
 }
@@ -33,6 +32,20 @@ return;
     }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.on('message', message => {
      if (message.content === "+سيرفرات") {
          if(!message.channel.guild) return;
@@ -44,16 +57,14 @@ client.on('message', message => {
 });
 
 
-client.on("guildCreate", guild => {
-  console.log(` شخص ما اضاف بوت  في سيرفر اسمه ! ${guild.name} اونر سيرفر هو ${guild.owner.user.username}!`)
-});
+
 
 
 
 client.on('message', message => {
   if (true) {
 if (message.content === '+support') {
-      message.author.send(' https://discord.gg/sdBXCU5| لـ أي استفسار').catch(e => console.log(e.stack));
+      message.author.send(' https://discord.gg/D6FHAtU| لـ أي استفسار').catch(e => console.log(e.stack));
 
     }
    } 
