@@ -50,9 +50,53 @@ client.on("guildCreate", guild => {
 
 
 
+client.on('message', message => {
+  if (true) {
+if (message.content === '+support') {
+      message.author.send(' https://discord.gg/sdBXCU5| لـ أي استفسار').catch(e => console.log(e.stack));
 
+    }
+   } 
+  });
+  
+  
 
+client.on('message', message => {
+     if (message.content === "+support") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
+client.on('message', message => {
+  if (true) {
+if (message.content === '+invite') {
+      message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=481090223560982539&permissions=2146958583&scope=bot p').catch(e => console.log(e.stack));
+
+    }
+   } 
+  });
+  
+  
+
+client.on('message', message => {
+     if (message.content === "+invite") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
