@@ -64,7 +64,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '+support') {
-      message.author.send(' https://discord.gg/D6FHAtU| لـ أي استفسار').catch(e => console.log(e.stack));
+      message.author.send(' https://discord.gg/bkrmPtz| لـ أي استفسار').catch(e => console.log(e.stack));
 
     }
    } 
