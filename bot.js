@@ -111,4 +111,4 @@ client.on('message', message => {
 
 
 
-client.login(process.env.BOT_TOKEN);
+client.login(NDgxMDkwMjIzNTYwOTgyNTM5.DlxSCQ.cv6zMpvO1v7npMUSRtYcr1xt1I4);
