@@ -16,11 +16,14 @@ client.on('message', message => {
     let args = message.content.split(' ').slice(1).join(' ');
 if(message.content.split(' ')[0] == prefix + 'bc') {
     if (!args[1]) {
+message.channel.send("**bc <message>**");
 return;
 }
         message.guild.members.forEach(m => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
             var bc = new Discord.RichEmbed()
+            .addField('» السيرفر :', `${message.guild.name}`)
+            .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
             .addField(' » الرسالة : ', args)
             .setColor('#ff0000')
             // m.send(`[${m}]`);
@@ -31,6 +34,7 @@ return;
         return;
     }
 });
+
 
 
 
@@ -64,8 +68,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '+support') {
-      message.author.send(' https://discord.gg/bkrmPtz| لـ أي استفسار').catch(e => console.log(e.stack));
-
+      message.author.send(' https://discord.gg/D6FHAtU| لـ أي استفسار').catch(e => console.log(e.stack));
     }
    } 
   });
