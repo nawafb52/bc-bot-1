@@ -123,7 +123,7 @@ client.on("message", message => {
         
         message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
         message.channel.sendMessage("", {embed: {
-          title: "``تــم مسح الشات ``",
+          title: "```تــم مسح الشات ```",
           color: 0x06DF00,
           footer: {
             
