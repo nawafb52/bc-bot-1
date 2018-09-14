@@ -6,7 +6,7 @@ client.on('ready', () => {
 });   
 
 client.on('ready', () => {
-    client.user.setActivity("+invite || +support",{type: 'streaming'})
+    client.user.setActivity("+invite || +support || +help",{type: 'streaming'})
 });
 
 client.on('message', message => {
@@ -151,8 +151,7 @@ client.on('message', message => {
   
 
 
-                            
-client.on('message', message => {
+client.on('ready', () => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
       message.react("☑")            
