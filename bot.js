@@ -22,9 +22,9 @@ return;
         message.guild.members.forEach(m => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
             var bc = new Discord.RichEmbed()
-            .addField('» السيرفر :', `${message.guild.name}`)
             .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
-            .addField(' » الرسالة : ', args)
+            .addField('» السيرفر :', `${message.guild.name}`)
+           .addField(' » الرسالة : ', args)
             .setColor('#ff0000')
             // m.send(`[${m}]`);
             m.send(`${m}`,{embed: bc});
@@ -51,7 +51,7 @@ return;
 
 
 client.on('message', message => {
-     if (message.content === "+سيرفرات") {
+     if (message.content === "+servers") {
          if(!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM") 
@@ -80,7 +80,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+  .addField(" Done | 😉تــــم" , "||   شيك على الخاص ")
      
      
      
@@ -104,7 +104,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+  .addField(" Done | 😉تــــم" , "||   شيك على الخاص ")
      
      
      
@@ -115,7 +115,7 @@ client.on('message', message => {
 
 client.on("message", message => {
               var args = message.content.substring(prefix.length).split(" ");
-              if (message.content.startsWith(prefix + "clear")) {
+              if (message.content.startsWith(prefix + "+-clean")) {
                   if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
      if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
           var msg;
@@ -133,6 +133,46 @@ client.on("message", message => {
   
        
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
