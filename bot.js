@@ -166,6 +166,23 @@ client.on("message", message => {
        
   });
 
+client.on("message", message => {
+  if (message.content === "help") {
+   const embed = new Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setFooter('By NAWAF')
+       .setThumbnail(message.author.avatarURL)
+       .setDescription(`
+
+   **✨اوامر البوت✨**
++bc | لي عمل برودكاست
++invite | لي دعوة البوت الى سيرفرك
++support | لي دخول سيرفر السبورت
+  __اوامر جديده بأذن الله__
+ `)
+ message.author.send(embed);
+}  
+});
 
 
 
