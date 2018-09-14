@@ -150,8 +150,8 @@ client.on('message', message => {
        
   
 
-client.on("message", message => {
-  if (message.content === "help") {
+client.on('message', message => {
+  if (message.content === 'help') {
    const embed = new Discord.RichEmbed()
        .setColor('RANDOM')
        .setFooter('By NAWAF')
@@ -182,7 +182,7 @@ client.on("message", message => {
 
 
 
-
+bl
 
 
 
