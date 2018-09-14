@@ -6,7 +6,7 @@ bc.on('ready', () => {
 });   
 
 bc.on('ready', () => {
-    bc.user.setActivity("+invite || +support || +help",{type: 'streaming'})
+    bc.user.setActivity("+invite || +support || +bc",{type: 'streaming'})
 });
 
 bc.on('message', message => {
@@ -149,24 +149,7 @@ bc.on('message', message => {
   
        
   
-bc.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help") {
-      message.react("☑")            
 
-   
-      message.author.sendMessage(`**شكرا لك لاستعمال البوت**
-
-╔[❖═════════════════════════════❖]╗
-❖${prefix}**bc** ==>***لي ارسال برودكاست***
-❖${prefix}**support** ==>***لي طلب سيرفر السبورت***
-❖${prefix}**invite** ==>***لي دعوة البوت الى سيرفرك***
-__وشكرا__
-╚[❖═════════════════════════════❖]╝
-`);
-
-}
-});
 
 
 
