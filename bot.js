@@ -151,21 +151,21 @@ client.on('message', message => {
   
 
 client.on('message', message => {
-  if (message.content === 'help') {
-   const embed = new Discord.RichEmbed()
-       .setColor('RANDOM')
-       .setFooter('By NAWAF')
-       .setThumbnail(message.author.avatarURL)
-       .setDescription(`
+  if (message.author.bot) return;
+   if (message.content === prefix + "help") {
+      message.react("☑")            
 
-   **✨اوامر البوت✨**
-+bc | لي عمل برودكاست
-+invite | لي دعوة البوت الى سيرفرك
-+support | لي دخول سيرفر السبورت
-  __اوامر جديده بأذن الله__
- `)
- message.author.send(embed);
-}  
+   
+      message.author.sendMessage(`***شكرا لك لاستعمال البوت***
+╔[❖═════════════════════════════❖]╗
+❖${prefix}**bc** ==>***لي ارسال برودكاست***
+❖${prefix}**support** ==>***لي طلب سيرفر السبورت***
+❖${prefix}**invite** ==>***لي دعوة البوت الى سيرفرك***
+__وشكرا__
+╚[❖═════════════════════════════❖]╝
+`);
+
+}
 });
 
 
@@ -182,7 +182,7 @@ client.on('message', message => {
 
 
 
-bl
+
 
 
 
