@@ -1,16 +1,16 @@
 const Discord = require('discord.js');
-const client = new Discord.bc();
+const client = new Discord.client();
 const prefix = '+'
-bc.on('ready', () => {
+client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });   
 
-bc.on('ready', () => {
-    bc.user.setActivity("+invite || +support || +bc",{type: 'streaming'})
+client.on('ready', () => {
+    client.user.setActivity("+invite || +support || +bc",{type: 'streaming'})
 });
 
-bc.on('message', message => {
-    if (message.author.id === bc.user.id) return;
+client.on('message', message => {
+    if (message.author.id === client.user.id) return;
     if (message.guild) {
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
@@ -43,7 +43,7 @@ return;
   }
 });
     
-bc.on('message', message => {
+client.on('message', message => {
     if (message.content.startsWith("+bot")) {
       message.channel.send({
  embed: new Discord.RichEmbed() 
@@ -82,7 +82,7 @@ bc.on('message', message => {
 
 
 
-bc.on('message', message => {
+client.on('message', message => {
      if (message.content === "+servers") {
          if(!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
@@ -97,7 +97,7 @@ bc.on('message', message => {
 
 
 
-bc.on('message', message => {
+client.on('message', message => {
   if (true) {
 if (message.content === '+support') {
       message.author.send(' https://discord.gg/D6FHAtU|  رابط السيرفر ').catch(e => console.log(e.stack));
@@ -107,7 +107,7 @@ if (message.content === '+support') {
   
   
 
-bc.on('message', message => {
+client.on('message', message => {
      if (message.content === "+support") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
@@ -120,7 +120,7 @@ bc.on('message', message => {
     }
 });
 
-bc.on('message', message => {
+client.on('message', message => {
   if (true) {
 if (message.content === '+invite') {
       message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=490091768860377088&permissions=2146958583&scope=bot p').catch(e => console.log(e.stack));
@@ -131,7 +131,7 @@ if (message.content === '+invite') {
   
   
 
-bc.on('message', message => {
+client.on('message', message => {
      if (message.content === "+invite") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
@@ -197,6 +197,4 @@ bc.on('message', message => {
 
 
 
-
-
-bc.login(process.env.BOT_TOKEN); 
+client.login(process.env.BOT_TOKEN); 
