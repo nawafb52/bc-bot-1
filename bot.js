@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const prefix = '+'
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-});
+});   
 
 client.on('ready', () => {
     client.user.setActivity("+invite || +support",{type: 'streaming'})
@@ -100,7 +100,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '+support') {
-      message.author.send(' https://discord.gg/D6FHAtU| لـ أي استفسار').catch(e => console.log(e.stack));
+      message.author.send(' https://discord.gg/D6FHAtU|  رابط السيرفر ').catch(e => console.log(e.stack));
     }
    } 
   });
@@ -123,7 +123,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '+invite') {
-      message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=481090223560982539&permissions=2146958583&scope=bot p').catch(e => console.log(e.stack));
+      message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=490091768860377088&permissions=2146958583&scope=bot p').catch(e => console.log(e.stack));
 
     }
    } 
@@ -145,26 +145,10 @@ client.on('message', message => {
 });
 
 
-client.on("message", message => {
-              var args = message.content.substring(prefix.length).split(" ");
-              if (message.content.startsWith(prefix + "+-clean")) {
-                  if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
-     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
-          var msg;
-          msg = parseInt();
-        
-        message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-        message.channel.sendMessage("", {embed: {
-          title: "تــم مسح الشات",
-          color: 0x06DF00,
-          footer: {
-            
-          }
-        }}).then(msg => {msg.delete(5000)});
                             }
   
        
-  });
+  
 
 client.on("message", message => {
   if (message.content === "help") {
