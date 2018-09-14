@@ -149,15 +149,14 @@ client.on('message', message => {
   
        
   
-
-
-client.on('ready', () => {
+client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
       message.react("☑")            
 
    
-      message.author.sendMessage(`***شكرا لك لاستعمال البوت***
+      message.author.sendMessage(`**شكرا لك لاستعمال البوت**
+
 ╔[❖═════════════════════════════❖]╗
 ❖${prefix}**bc** ==>***لي ارسال برودكاست***
 ❖${prefix}**support** ==>***لي طلب سيرفر السبورت***
