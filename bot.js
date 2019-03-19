@@ -6,7 +6,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`); 
 client.user.setGame(`Clan End The Best`,"http://twitch.tv/S-F")
   console.log('')
-  console.log('')
+  console.log('') 
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
   console.log(`[Start] ${new Date()}`);
   console.log('╚[═════════════════════════════════════════════════════════════════]╝')
@@ -30,29 +30,28 @@ client.user.setGame(`Clan End The Best`,"http://twitch.tv/S-F")
 
 
       
-client.on('message', async msg => {
-    if(msg.content.startsWith(prefix + 'bc')) {
-      let roleW = msg.mentions.roles.first();
-      let args2 = msg.content.split(" ").slice(2).join(" ");
-       if(!msg.guild.members.get(msg.author.id).hasPermission('ADMINISTRATOR')) return msg.channel.send('Required Administrator Permission') 
-       let role = msg.guild.roles.find(`name`, roleW.name);
-       if(!role) return msg.reply(`Could't find \`${roleW.name}\` role.`).then( msgs => msgs.delete(3000)); 
-       let nomsg = 0;
-         msg.channel.send(`**- [ :mailbox_closed:  :: ${nomsg} ] ・عدد الرسائل المرسلة**`).then(msgs => {
-         role.members.forEach(m =>{
-        m.send(args2.replace('[user]', m).replace('[server]', m.guild.name).replace('[sender]', msg.author.username)).then( () =>{
-          nomsg++;
-                  if(!msgs) return;
-                  msgs.edit(`**- [ :mailbox_closed:  :: ${nomsg} ] ・عدد الرسائل المرسلة**`);
-        }).catch(e => {
-          nomsg++;
-                  if(!msgs) return;
-          msgs.edit(`**- [ :mailbox_closed:  :: ${nomsg} ] ・عدد الرسائل المرسلة**`);
-        });
-        }); 
-      });
-      }})
+client.on('message', message => {
+   let embed = new Discord.RichEmbed()
 
+    let args = message.content.split(' ').slice(1).join(' ');
+     if(!message.channel.guild) return;
+if(message.content.split(' ')[0] == '$bc') {
+         message.react("✔️")
+          let embed = new Discord.RichEmbed()
+    .setColor("#FF00FF")
+    .setThumbnail(message.author.avatarURL)   
+                                      .addField('تم الارسال بواسطة :', "<@" + message.author.id + ">")
+                 message.channel.sendEmbed(embed);
+        message.guild.members.forEach(m => {
+            var bc = new Discord.RichEmbed()
+.addField('**● Sender  :**', `*** → ${message.author.username}#${message.author.discriminator}***`)
+            .addField('***● Server  :***', `*** → ${message.guild.name}***`)               
+    .setColor('#ff0000')
+                 .addField('ّ', args)
+            m.send(``,{embed: bc});
+        });
+    }
+})
 
     
 
