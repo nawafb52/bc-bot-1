@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js');  
 const client = new Discord.Client();
 const prefix = '$'
 
@@ -68,4 +68,4 @@ return;
 
 
 
-clinet.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
