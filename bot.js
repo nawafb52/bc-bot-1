@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const prefix = '$'
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as ${client.user.tag}!`); 
 client.user.setGame(`Clan End The Best`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
@@ -29,37 +29,31 @@ client.user.setGame(`Clan End The Best`,"http://twitch.tv/S-F")
 });
 
 
-      client.on('message', message => {
-    if (message.author.id === client.user.id) return;
-    if (message.guild) {
-   let embed = new Discord.RichEmbed()
-    let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc') {
-    if (!args[1]) {
-message.channel.send("**bc <message>**");
-return;
-}
-        message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            var bc = new Discord.RichEmbed()
-           .addField('', args)
-            .setColor('#ff0000')
-            // m.send(`[${m}]`);
-            m.send(`${m}`,{embed: bc});
+      
+client.on('message', async msg => {
+    if(msg.content.startsWith(prefix + 'bc')) {
+      let roleW = msg.mentions.roles.first();
+      let args2 = msg.content.split(" ").slice(2).join(" ");
+       if(!msg.guild.members.get(msg.author.id).hasPermission('ADMINISTRATOR')) return msg.channel.send('Required Administrator Permission') 
+       let role = msg.guild.roles.find(`name`, roleW.name);
+       if(!role) return msg.reply(`Could't find \`${roleW.name}\` role.`).then( msgs => msgs.delete(3000)); 
+       let nomsg = 0;
+         msg.channel.send(`**- [ :mailbox_closed:  :: ${nomsg} ] ・عدد الرسائل المرسلة**`).then(msgs => {
+         role.members.forEach(m =>{
+        m.send(args2.replace('[user]', m).replace('[server]', m.guild.name).replace('[sender]', msg.author.username)).then( () =>{
+          nomsg++;
+                  if(!msgs) return;
+                  msgs.edit(`**- [ :mailbox_closed:  :: ${nomsg} ] ・عدد الرسائل المرسلة**`);
+        }).catch(e => {
+          nomsg++;
+                  if(!msgs) return;
+          msgs.edit(`**- [ :mailbox_closed:  :: ${nomsg} ] ・عدد الرسائل المرسلة**`);
         });
-         const AziRo = new Discord.RichEmbed()
-      .setAuthor(message.author.username, message.author.avatarURL)
-      .setTitle('✅| جاري ارسال رسالتك ')
-      .addBlankField(true)
-      .addField('♨| عدد الاعضاء المرسل لهم ', message.guild.memberCount , true)
-      .addField('📝| الرسالة ', args)
-      .setColor('RANDOM')
-      message.channel.sendEmbed(embed);
-  }
-  } else {
-      return;
-  }
-});
+        }); 
+      });
+      }})
+
+
     
 
 
