@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '+'
+const prefix = '$'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`+invite || +support || +bc`,"http://twitch.tv/S-F")
+client.user.setGame(`Clan End The Best`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -35,7 +35,7 @@ client.on('message', message => {
     let args = message.content.split(' ').slice(1).join(' ');
 if(message.content.split(' ')[0] == prefix + 'bc') {
     if (!args[1]) {
-message.channel.send("**bc <message>**");
+message.channel.send("**$bc <message>**");
 return;
 }
         message.guild.members.forEach(m => {
@@ -63,7 +63,7 @@ return;
 });
     
 client.on('message', message => {
-    if (message.content.startsWith("+bot")) {
+    if (message.content.startsWith("$bot")) {
       message.channel.send({
  embed: new Discord.RichEmbed() 
     .setColor('RED')
@@ -102,7 +102,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     if (message.content === "+servers") {
+     if (message.content === "$servers") {
          if(!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM") 
@@ -116,55 +116,18 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-  if (true) {
-if (message.content === '+support') {
-      message.author.send(' https://discord.gg/D6FHAtU|  رابط السيرفر ').catch(e => console.log(e.stack));
-    }
-   } 
-  });
+
   
   
 
-client.on('message', message => {
-     if (message.content === "+support") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" Done | 😉تــــم" , "||   شيك على الخاص ")
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
 
-client.on('message', message => {
-  if (true) {
-if (message.content === '+invite') {
-      message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=490091768860377088&permissions=2146958583&scope=bot p').catch(e => console.log(e.stack));
-
-    }
-   } 
-  });
-  
+     
+     
   
 
-client.on('message', message => {
-     if (message.content === "+invite") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" Done | 😉تــــم" , "||   شيك على الخاص ")
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
-                            }
+                            
   
        
   
