@@ -42,9 +42,7 @@ return;
         message.guild.members.forEach(m => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
             var bc = new Discord.RichEmbed()
-            .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
-            .addField('» السيرفر :', `${message.guild.name}`)
-           .addField(' » الرسالة : ', args)
+           .addField('', args)
             .setColor('#ff0000')
             // m.send(`[${m}]`);
             m.send(`${m}`,{embed: bc});
